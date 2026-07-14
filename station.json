@@ -1,0 +1,61 @@
+[
+{
+"id": 1,
+"name": "OLA Bole Station",
+"location": "Bole Road",
+"distance": "2.3 km",
+"gasoline": "Available",
+"diesel": "Available",
+"kerosene": "Low Stock",
+"ev": "Active",
+"gasolinePrice": "85 ETB/L",
+"dieselPrice": "82 ETB/L",
+"updated": "10 minutes ago",
+"phone": "+251911111111"
+},
+
+{
+"id": 2,
+"name": "OLA Mexico Station",
+"location": "Mexico Square",
+"distance": "4.1 km",
+"gasoline": "Available",
+"diesel": "Low Stock",
+"kerosene": "Available",
+"ev": "Inactive",
+"gasolinePrice": "85 ETB/L",
+"dieselPrice": "82 ETB/L",
+"updated": "25 minutes ago",
+"phone": "+251922222222"
+},
+
+{
+"id": 3,
+"name": "OLA CMC Station",
+"location": "CMC Area",
+"distance": "5.8 km",
+"gasoline": "Low Stock",
+"diesel": "Available",
+"kerosene": "Available",
+"ev": "Active",
+"gasolinePrice": "85 ETB/L",
+"dieselPrice": "82 ETB/L",
+"updated": "5 minutes ago",
+"phone": "+251933333333"
+},
+
+{
+"id": 4,
+"name": "OLA Sarbet Station",
+"location": "Sarbet",
+"distance": "3.7 km",
+"gasoline": "Unavailable",
+"diesel": "Available",
+"kerosene": "Low Stock",
+"ev": "Active",
+"gasolinePrice": "85 ETB/L",
+"dieselPrice": "82 ETB/L",
+"updated": "15 minutes ago",
+"phone": "+251944444444"
+}
+]

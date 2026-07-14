@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finote Map | Fuel Station Discovery</title>
+
+```
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/map.css">
+```
+
+</head>
+<body>
+
+```
+<!-- Top Navigation -->
+<header class="map-navbar">
+
+    <div class="nav-left">
+        <a href="index.html" class="logo">
+            FINOTE
+        </a>
+    </div>
+
+    <div class="nav-center">
+
+        <div class="search-box">
+            <input
+                type="text"
+                placeholder="Search station or area..."
+                id="stationSearch"
+            >
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button class="location-btn">
+            📍 My Location
+        </button>
+
+    </div>
+
+</header>
+
+<!-- Main Map Layout -->
+<main class="map-layout">
+
+    <!-- Map Section -->
+    <section class="map-container">
+
+        <div class="map-placeholder">
+
+```
+<img
+    src="assets/map.PNG"
+    alt="Addis Ababa Map"
+    class="map-image"
+>
+
+<button class="station-marker marker-1" data-id="1">
+    ⛽
+</button>
+
+<button class="station-marker marker-2" data-id="2">
+    ⛽
+</button>
+
+<button class="station-marker marker-3" data-id="3">
+    ⛽
+</button>
+
+<button class="station-marker marker-4" data-id="4">
+    ⛽
+</button>
+```
+
+</div>
+
+
+    </section>
+
+    <!-- Station Information Sidebar -->
+
+    <aside class="station-sidebar" id="stationSidebar">
+
+        <div class="sidebar-header">
+
+            <h2 id="stationName">
+                OLA Bole Station
+            </h2>
+
+            <button id="closeSidebar">
+                ✕
+            </button>
+
+        </div>
+
+        <div class="station-info">
+
+            <div class="info-row">
+                <span>📍 Location</span>
+                <span id="stationLocation">Bole Road</span>
+            </div>
+
+            <div class="info-row">
+                <span>Distance</span>
+                <span id="stationDistance">2.3 km</span>
+            </div>
+
+        </div>
+
+        <div class="status-section">
+
+            <h3>Fuel Availability</h3>
+
+            <div class="fuel-status">
+                <span>Gasoline</span>
+                <span id="gasolineStatus" class="status available">
+                    Available
+                </span>
+            </div>
+
+            <div class="fuel-status">
+                <span>Diesel</span>
+                <span id="dieselStatus" class="status available">
+                    Available
+                </span>
+            </div>
+
+            <div class="fuel-status">
+                <span>Kerosene</span>
+                <span id="keroseneStatus" class="status low">
+                    Low Stock
+                </span>
+            </div>
+
+            <div class="fuel-status">
+                <span>EV Charging</span>
+                <span id="evStatus"class="status available">
+                    Active
+                </span>
+            </div>
+
+        </div>
+
+        <div class="price-section">
+
+            <h3>Current Prices</h3>
+
+            <div class="price-row">
+                <span>Gasoline</span>
+                <span id="gasolinePrice">85 ETB/L</span>
+            </div>
+
+            <div class="price-row">
+                <span>Diesel</span>
+                <span id="dieselPrice">82 ETB/L</span>
+            </div>
+
+        </div>
+
+        <div class="update-section">
+
+            <p id="lastUpdated">
+                Last Updated: 10 minutes ago
+            </p>
+
+        </div>
+
+        <div class="sidebar-actions">
+
+            <button class="primary-btn">
+                Get Directions
+            </button>
+
+            <button class="secondary-btn">
+                Call Station
+            </button>
+
+        </div>
+
+    </aside>
+
+</main>
+
+<!-- Mobile Bottom Sheet -->
+
+<section
+    class="mobile-station-sheet"
+    id="mobileSheet"
+>
+
+```
+<div class="sheet-handle"></div>
+
+<div class="sheet-content">
+
+    <h3 id="mobileStationName">
+        OLA Bole Station
+    </h3>
+
+    <p id="mobileStationStatus">
+        Gasoline Available
+    </p>
+
+    <div class="mobile-actions">
+
+        <button class="primary-btn">
+            Get Directions
+        </button>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+
+<script src="js/stations.js"></script>
+<script src="js/map.js"></script>
+```
+
+</body>
+</html>

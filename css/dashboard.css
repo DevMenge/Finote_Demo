@@ -1,0 +1,217 @@
+/* =========================
+DASHBOARD LAYOUT
+========================= */
+
+.dashboard-layout{
+display:flex;
+min-height:100vh;
+background:#f8fafc;
+}
+
+/* =========================
+SIDEBAR
+========================= */
+
+.sidebar{
+width:260px;
+background:#0f172a;
+color:white;
+padding:30px 20px;
+display:flex;
+flex-direction:column;
+}
+
+.sidebar-logo{
+font-size:1.6rem;
+font-weight:800;
+margin-bottom:40px;
+color:#f97316;
+}
+
+.sidebar nav{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.sidebar nav a{
+padding:14px 16px;
+border-radius:12px;
+color:#cbd5e1;
+transition:.3s;
+font-weight:500;
+}
+
+.sidebar nav a:hover{
+background:#1e293b;
+color:white;
+}
+
+.sidebar nav a.active{
+background:#f97316;
+color:white;
+}
+
+/* =========================
+MAIN CONTENT
+========================= */
+
+.dashboard-content{
+flex:1;
+padding:40px;
+overflow-y:auto;
+}
+
+.dashboard-content .page-header{
+margin-bottom:30px;
+}
+
+.dashboard-content .page-header h1{
+font-size:2rem;
+margin-bottom:8px;
+}
+
+.dashboard-content .page-header p{
+color:#64748b;
+}
+
+/* =========================
+DASHBOARD CARDS
+========================= */
+
+.dashboard-card{
+background:white;
+border-radius:16px;
+padding:24px;
+margin-bottom:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.dashboard-card h2{
+text-align:left;
+margin-bottom:20px;
+font-size:1.3rem;
+}
+
+/* =========================
+GRID
+========================= */
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* =========================
+FUEL CARDS
+========================= */
+
+.fuel-card{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.fuel-card label{
+font-weight:600;
+color:#334155;
+}
+
+.fuel-card input,
+.fuel-card select{
+width:100%;
+padding:14px;
+border:1px solid #e2e8f0;
+border-radius:12px;
+font-size:1rem;
+background:white;
+outline:none;
+transition:.3s;
+}
+
+.fuel-card input:focus,
+.fuel-card select:focus{
+border-color:#f97316;
+box-shadow:0 0 0 4px rgba(249,115,22,.15);
+}
+
+/* =========================
+ACTION BUTTON
+========================= */
+
+.dashboard-content .btn-primary{
+margin-top:10px;
+min-width:220px;
+}
+
+/* =========================
+QUICK STATUS BADGES
+========================= */
+
+.status-badge{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:6px 12px;
+border-radius:999px;
+font-size:.85rem;
+font-weight:600;
+}
+
+.status-available{
+background:#dcfce7;
+color:#15803d;
+}
+
+.status-low{
+background:#fef3c7;
+color:#b45309;
+}
+
+.status-unavailable{
+background:#fee2e2;
+color:#b91c1c;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+
+.dashboard-layout{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+    padding:20px;
+}
+
+.sidebar nav{
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+
+}
+
+@media(max-width:768px){
+
+
+.dashboard-content{
+    padding:20px;
+}
+
+.dashboard-grid{
+    grid-template-columns:1fr;
+}
+
+.dashboard-content .page-header h1{
+    font-size:1.6rem;
+}
+
+
+}

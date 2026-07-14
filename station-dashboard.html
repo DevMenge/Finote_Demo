@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Dashboard | Finote</title>
+
+```
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+```
+
+</head>
+<body>
+
+```
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            FINOTE
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                Dashboard
+            </a>
+
+            <a href="#">
+                Fuel Status
+            </a>
+
+            <a href="#">
+                Pricing
+            </a>
+
+            <a href="#">
+                Station Info
+            </a>
+
+            <a href="#">
+                Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-content">
+
+        <div class="page-header">
+
+            <h1>
+                OLA Bole Station
+            </h1>
+
+            <p>
+                Manage station availability and pricing.
+            </p>
+
+        </div>
+
+        <section class="dashboard-card">
+
+            <h2>Fuel Availability</h2>
+
+            <div class="dashboard-grid">
+
+                <div class="fuel-card">
+                    <label>Gasoline</label>
+
+                    <select>
+                        <option>Available</option>
+                        <option>Low Stock</option>
+                        <option>Unavailable</option>
+                    </select>
+                </div>
+
+                <div class="fuel-card">
+                    <label>Diesel</label>
+
+                    <select>
+                        <option>Available</option>
+                        <option>Low Stock</option>
+                        <option>Unavailable</option>
+                    </select>
+                </div>
+
+                <div class="fuel-card">
+                    <label>Kerosene</label>
+
+                    <select>
+                        <option>Low Stock</option>
+                        <option>Available</option>
+                        <option>Unavailable</option>
+                    </select>
+                </div>
+
+                <div class="fuel-card">
+                    <label>EV Charging</label>
+
+                    <select>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-card">
+
+            <h2>Fuel Prices</h2>
+
+            <div class="dashboard-grid">
+
+                <div class="fuel-card">
+                    <label>Gasoline Price (ETB)</label>
+                    <input type="number" value="85">
+                </div>
+
+                <div class="fuel-card">
+                    <label>Diesel Price (ETB)</label>
+                    <input type="number" value="82">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-card">
+
+            <h2>Station Information</h2>
+
+            <div class="dashboard-grid">
+
+                <div class="fuel-card">
+                    <label>Station Name</label>
+                    <input type="text" value="OLA Bole Station">
+                </div>
+
+                <div class="fuel-card">
+                    <label>Location</label>
+                    <input type="text" value="Bole Road">
+                </div>
+
+            </div>
+
+        </section>
+
+        <button class="btn-primary">
+            Save Changes
+        </button>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+```
+
+</body>
+</html>
