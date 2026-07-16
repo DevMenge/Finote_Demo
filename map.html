@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="am">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finote Map | Fuel Station Discovery</title>
 
-```
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/map.css">
-```
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/map.css">
 </head>
 <body>
 
-```
 <!-- Top Navigation -->
 <header class="map-navbar">
 
@@ -25,28 +20,18 @@
     </div>
 
     <div class="nav-center">
-
         <div class="search-box">
             <input
                 type="text"
-                placeholder="Search station or area..."
+                placeholder="ጣቢያ ወይም አካባቢ ፈልግ..."
                 id="stationSearch"
             >
         </div>
-
-    </div>
-
-    <div class="nav-right">
-
-        <button class="location-btn">
-            📍 My Location
-        </button>
-
     </div>
 
 </header>
 
-<!-- Main Map Layout -->
+<!-- Main Layout -->
 <main class="map-layout">
 
     <!-- Map Section -->
@@ -54,43 +39,47 @@
 
         <div class="map-placeholder">
 
-```
-<img
-    src="assets/map.PNG"
-    alt="Addis Ababa Map"
-    class="map-image"
->
+            <img
+                src="assets/map.PNG"
+                alt="Addis Ababa Map"
+                class="map-image"
+            >
+
+            <!-- Station Markers -->
+
+          <!-- Station Markers -->
 
 <button class="station-marker marker-1" data-id="1">
-    ⛽
+    <span class="marker-icon">⛽</span>
 </button>
 
 <button class="station-marker marker-2" data-id="2">
-    ⛽
+    <span class="marker-icon">⛽</span>
 </button>
 
 <button class="station-marker marker-3" data-id="3">
-    ⛽
+    <span class="marker-icon">⛽</span>
 </button>
 
 <button class="station-marker marker-4" data-id="4">
-    ⛽
+    <span class="marker-icon">⛽</span>
 </button>
-```
 
-</div>
-
+        </div>
 
     </section>
 
-    <!-- Station Information Sidebar -->
+    <!-- Desktop Sidebar -->
 
-    <aside class="station-sidebar" id="stationSidebar">
+    <aside
+        class="station-sidebar"
+        id="stationSidebar"
+    >
 
         <div class="sidebar-header">
 
             <h2 id="stationName">
-                OLA Bole Station
+                ኦላ ቦሌ ጣቢያ
             </h2>
 
             <button id="closeSidebar">
@@ -102,46 +91,64 @@
         <div class="station-info">
 
             <div class="info-row">
-                <span>📍 Location</span>
-                <span id="stationLocation">Bole Road</span>
+                <span>📍 ቦታ</span>
+                <span id="stationLocation">
+                    ቦሌ መንገድ
+                </span>
             </div>
 
             <div class="info-row">
-                <span>Distance</span>
-                <span id="stationDistance">2.3 km</span>
+                <span>ርቀት</span>
+                <span id="stationDistance">
+                    2.3 ኪ.ሜ
+                </span>
             </div>
 
         </div>
 
         <div class="status-section">
 
-            <h3>Fuel Availability</h3>
+            <h3>
+                የነዳጅ ሁኔታ
+            </h3>
 
             <div class="fuel-status">
-                <span>Gasoline</span>
-                <span id="gasolineStatus" class="status available">
-                    Available
+                <span>ቤንዚን</span>
+                <span
+                    id="gasolineStatus"
+                    class="status available"
+                >
+                    አለ
                 </span>
             </div>
 
             <div class="fuel-status">
-                <span>Diesel</span>
-                <span id="dieselStatus" class="status available">
-                    Available
+                <span>ዲዝል</span>
+                <span
+                    id="dieselStatus"
+                    class="status available"
+                >
+                    አለ
                 </span>
             </div>
 
             <div class="fuel-status">
-                <span>Kerosene</span>
-                <span id="keroseneStatus" class="status low">
-                    Low Stock
+                <span>ኬሮሲን</span>
+                <span
+                    id="keroseneStatus"
+                    class="status low"
+                >
+                    ዝቅተኛ
                 </span>
             </div>
 
             <div class="fuel-status">
-                <span>EV Charging</span>
-                <span id="evStatus"class="status available">
-                    Active
+                <span>ኤሌክትሪክ ቻርጅ</span>
+                <span
+                    id="evStatus"
+                    class="status available"
+                >
+                    ንቁ
                 </span>
             </div>
 
@@ -149,16 +156,22 @@
 
         <div class="price-section">
 
-            <h3>Current Prices</h3>
+            <h3>
+                የአሁኑ ዋጋ
+            </h3>
 
             <div class="price-row">
-                <span>Gasoline</span>
-                <span id="gasolinePrice">85 ETB/L</span>
+                <span>ቤንዚን</span>
+                <span id="gasolinePrice">
+                    85 ብር/ሊ
+                </span>
             </div>
 
             <div class="price-row">
-                <span>Diesel</span>
-                <span id="dieselPrice">82 ETB/L</span>
+                <span>ዲዝል</span>
+                <span id="dieselPrice">
+                    82 ብር/ሊ
+                </span>
             </div>
 
         </div>
@@ -166,19 +179,25 @@
         <div class="update-section">
 
             <p id="lastUpdated">
-                Last Updated: 10 minutes ago
+                መጨረሻ የተዘመነው: 10 ደቂቃ በፊት
             </p>
 
         </div>
 
         <div class="sidebar-actions">
 
-            <button class="primary-btn">
-                Get Directions
+            <button
+                class="primary-btn"
+                id="directionBtn"
+            >
+                አቅጣጫ አሳይ
             </button>
 
-            <button class="secondary-btn">
-                Call Station
+            <button
+                class="secondary-btn"
+                id="callBtn"
+            >
+                ደውል
             </button>
 
         </div>
@@ -194,36 +213,148 @@
     id="mobileSheet"
 >
 
-```
-<div class="sheet-handle"></div>
+    <div class="sheet-handle-area">
+        <div class="sheet-handle"></div>
+    </div>
 
-<div class="sheet-content">
+    <!-- Collapsed Preview -->
+    <div class="sheet-preview">
 
-    <h3 id="mobileStationName">
-        OLA Bole Station
-    </h3>
+        <div class="preview-left">
 
-    <p id="mobileStationStatus">
-        Gasoline Available
-    </p>
+            <h3 id="mobileStationName">
+                ኦላ ቦሌ ጣቢያ
+            </h3>
 
-    <div class="mobile-actions">
+            <p id="mobileLocation">
+                ቦሌ መንገድ
+            </p>
 
-        <button class="primary-btn">
-            Get Directions
-        </button>
+        </div>
+
+        <div
+            class="preview-badge"
+            id="mobileAvailabilityBadge"
+        >
+            ⛽ አለ
+        </div>
 
     </div>
 
-</div>
-```
+    <!-- Expandable Details -->
+    <div class="sheet-content">
+
+        <div class="mobile-section">
+
+            <h4>ጣቢያ መረጃ</h4>
+
+            <div class="info-row">
+                <span>📍 ቦታ</span>
+                <span id="mobileLocationText">
+                    ቦሌ መንገድ
+                </span>
+            </div>
+
+            <div class="info-row">
+                <span>📏 ርቀት</span>
+                <span id="mobileDistance">
+                    2.3 ኪ.ሜ
+                </span>
+            </div>
+
+        </div>
+
+        <div class="mobile-section">
+
+            <h4>የነዳጅ ሁኔታ</h4>
+
+            <div class="fuel-status">
+                <span>ቤንዚን</span>
+                <span id="mobileGasoline">
+                    አለ
+                </span>
+            </div>
+
+            <div class="fuel-status">
+                <span>ዲዝል</span>
+                <span id="mobileDiesel">
+                    አለ
+                </span>
+            </div>
+
+            <div class="fuel-status">
+                <span>ኬሮሲን</span>
+                <span id="mobileKerosene">
+                    ዝቅተኛ
+                </span>
+            </div>
+
+            <div class="fuel-status">
+                <span>ኤሌክትሪክ ቻርጅ</span>
+                <span id="mobileEV">
+                    ንቁ
+                </span>
+            </div>
+
+        </div>
+
+        <div class="mobile-section">
+
+            <h4>የአሁኑ ዋጋ</h4>
+
+            <div class="price-row">
+                <span>ቤንዚን</span>
+                <span id="mobileGasPrice">
+                    85 ብር/ሊ
+                </span>
+            </div>
+
+            <div class="price-row">
+                <span>ዲዝል</span>
+                <span id="mobileDieselPrice">
+                    82 ብር/ሊ
+                </span>
+            </div>
+
+        </div>
+
+        <div class="update-section">
+
+            <p
+                id="mobileUpdated"
+                class="mobile-updated"
+            >
+                10 ደቂቃ በፊት
+            </p>
+
+        </div>
+
+        <div class="sidebar-actions">
+
+            <button
+                class="primary-btn"
+                id="mobileDirectionBtn"
+            >
+                🧭 አቅጣጫ አሳይ
+            </button>
+
+            <button
+                class="secondary-btn"
+                id="mobileCallBtn"
+            >
+                📞 ደውል
+            </button>
+
+        </div>
+
+    </div>
 
 </section>
 
+</section>
 
 <script src="js/stations.js"></script>
 <script src="js/map.js"></script>
-```
 
 </body>
 </html>
