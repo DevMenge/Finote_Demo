@@ -1,169 +1,221 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="am">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Station Dashboard | Finote</title>
+    <title>የማደያ መቆጣጠሪያ ሰሌዳ | ፍኖት</title>
 
-```
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/dashboard.css">
-```
+
 
 </head>
 <body>
 
-```
 <div class="dashboard-layout">
 
-    <aside class="sidebar">
 
-        <div class="sidebar-logo">
+<!-- Sidebar -->
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
         <a href="index.html" class="logo">
             FINOTE
         </a>
+    </div>
+
+    <nav>
+
+        <a href="#" class="active">
+            🏠 ዋና መቆጣጠሪያ
+        </a>
+
+        <a href="#">
+            ⛽ የነዳጅ ሁኔታ
+        </a>
+
+        <a href="#">
+            💰 የነዳጅ ዋጋ
+        </a>
+
+        <a href="#">
+            📍 የማደያ መረጃ
+        </a>
+
+        <a href="#">
+            📊 ሪፖርቶች
+        </a>
+
+        <a href="#">
+            🚪 ውጣ
+        </a>
+
+    </nav>
+
+</aside>
+
+<!-- Main Content -->
+<main class="dashboard-content">
+
+    <div class="page-header">
+
+        <h1>
+            ኦላ ቦሌ ነዳጅ ማደያ
+        </h1>
+
+        <p>
+            የነዳጅ መጠን፣ ዋጋ እና የማደያ መረጃዎችን ያስተዳድሩ።
+        </p>
+
+    </div>
+
+    <!-- Statistics -->
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">⛽</div>
+            <h3>4</h3>
+            <p>የሚገኙ አገልግሎቶች</p>
         </div>
 
-        <nav>
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <h3>248</h3>
+            <p>ዛሬ የተገለገሉ ደንበኞች</p>
+        </div>
 
-            <a href="#" class="active">
-                Dashboard
-            </a>
+        <div class="stat-card">
+            <div class="stat-icon">🕒</div>
+            <h3>5 ደቂቃ</h3>
+            <p>የመጨረሻ ዝማኔ</p>
+        </div>
 
-            <a href="#">
-                Fuel Status
-            </a>
+    </section>
 
-            <a href="#">
-                Pricing
-            </a>
+    <!-- Fuel Status -->
+    <section class="dashboard-card">
 
-            <a href="#">
-                Station Info
-            </a>
+        <h2>
+            ⛽ የነዳጅ ሁኔታ
+        </h2>
 
-            <a href="#">
-                Logout
-            </a>
+        <div class="dashboard-grid">
 
-        </nav>
+            <div class="fuel-card">
+                <label>ቤንዚን</label>
 
-    </aside>
+                <select>
+                    <option>አለ</option>
+                    <option>አነስተኛ ክምችት</option>
+                    <option>አልቋል</option>
+                </select>
+            </div>
 
-    <main class="dashboard-content">
+            <div class="fuel-card">
+                <label>ናፍጣ</label>
 
-        <div class="page-header">
+                <select>
+                    <option>አለ</option>
+                    <option>አነስተኛ ክምችት</option>
+                    <option>አልቋል</option>
+                </select>
+            </div>
 
-            <h1>
-                OLA Bole Station
-            </h1>
+            <div class="fuel-card">
+                <label>ኬሮሲን</label>
 
-            <p>
-                Manage station availability and pricing.
-            </p>
+                <select>
+                    <option>አነስተኛ ክምችት</option>
+                    <option>አለ</option>
+                    <option>አልቋል</option>
+                </select>
+            </div>
+
+            <div class="fuel-card">
+                <label>የኤሌክትሪክ ኃይል</label>
+
+                <select>
+                    <option>ንቁ</option>
+                    <option>ዝግ</option>
+                </select>
+            </div>
 
         </div>
 
-        <section class="dashboard-card">
+    </section>
 
-            <h2>Fuel Availability</h2>
+    <!-- Fuel Prices -->
+    <section class="dashboard-card">
 
-            <div class="dashboard-grid">
+        <h2>
+            💰 የነዳጅ ዋጋዎች
+        </h2>
 
-                <div class="fuel-card">
-                    <label>Gasoline</label>
+        <div class="dashboard-grid">
 
-                    <select>
-                        <option>Available</option>
-                        <option>Low Stock</option>
-                        <option>Unavailable</option>
-                    </select>
-                </div>
-
-                <div class="fuel-card">
-                    <label>Diesel</label>
-
-                    <select>
-                        <option>Available</option>
-                        <option>Low Stock</option>
-                        <option>Unavailable</option>
-                    </select>
-                </div>
-
-                <div class="fuel-card">
-                    <label>Kerosene</label>
-
-                    <select>
-                        <option>Low Stock</option>
-                        <option>Available</option>
-                        <option>Unavailable</option>
-                    </select>
-                </div>
-
-                <div class="fuel-card">
-                    <label>EV Charging</label>
-
-                    <select>
-                        <option>Active</option>
-                        <option>Inactive</option>
-                    </select>
-                </div>
-
+            <div class="fuel-card">
+                <label>የቤንዚን ዋጋ (ብር)</label>
+                <input type="number" value="85">
             </div>
 
-        </section>
-
-        <section class="dashboard-card">
-
-            <h2>Fuel Prices</h2>
-
-            <div class="dashboard-grid">
-
-                <div class="fuel-card">
-                    <label>Gasoline Price (ETB)</label>
-                    <input type="number" value="85">
-                </div>
-
-                <div class="fuel-card">
-                    <label>Diesel Price (ETB)</label>
-                    <input type="number" value="82">
-                </div>
-
+            <div class="fuel-card">
+                <label>የናፍጣ ዋጋ (ብር)</label>
+                <input type="number" value="82">
             </div>
 
-        </section>
+        </div>
 
-        <section class="dashboard-card">
+    </section>
 
-            <h2>Station Information</h2>
+    <!-- Station Information -->
+    <section class="dashboard-card">
 
-            <div class="dashboard-grid">
+        <h2>
+            📍 የማደያ መረጃ
+        </h2>
 
-                <div class="fuel-card">
-                    <label>Station Name</label>
-                    <input type="text" value="OLA Bole Station">
-                </div>
+        <div class="dashboard-grid">
 
-                <div class="fuel-card">
-                    <label>Location</label>
-                    <input type="text" value="Bole Road">
-                </div>
-
+            <div class="fuel-card">
+                <label>የማደያ ስም</label>
+                <input type="text" value="ኦላ ቦሌ ነዳጅ ማደያ">
             </div>
 
-        </section>
+            <div class="fuel-card">
+                <label>አድራሻ</label>
+                <input type="text" value="ቦሌ መንገድ">
+            </div>
 
-        <button class="btn-primary">
-            Save Changes
+            <div class="fuel-card">
+                <label>ስልክ ቁጥር</label>
+                <input type="text" value="+251911111111">
+            </div>
+
+            <div class="fuel-card">
+                <label>የሥራ ሰዓት</label>
+                <input type="text" value="24 ሰዓት">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Save -->
+    <div class="save-section">
+
+        <button class="btn-primary save-btn">
+            💾 ለውጦችን አስቀምጥ
         </button>
 
-    </main>
+    </div>
+
+</main>
 
 </div>
 
 <script src="js/dashboard.js"></script>
-```
 
 </body>
 </html>
