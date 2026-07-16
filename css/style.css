@@ -250,6 +250,10 @@ color:var(--success);
 font-weight:600;
 }
 
+.availablee{
+color:var(--danger);
+font-weight:600;
+}
 .low-stock{
 color:var(--warning);
 font-weight:600;
@@ -342,6 +346,10 @@ border-radius:14px;
 box-shadow:var(--shadow);
 
 
+}
+
+.arch-box.highlight{
+    color :#0f172a;
 }
 
 .arch-arrow{
