@@ -1,115 +1,402 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const mobileStationName =
-document.getElementById(
-"mobileStationName"
-);
+    const markers =
+    document.querySelectorAll(".station-marker");
 
-const mobileStationStatus =
-document.getElementById(
-"mobileStationStatus"
-);
+    /* =========================
+       DESKTOP ELEMENTS
+    ========================= */
 
-const markers = document.querySelectorAll(".station-marker");
+    const stationName =
+    document.getElementById("stationName");
 
-const stationName = document.getElementById("stationName");
-const stationLocation = document.getElementById("stationLocation");
-const stationDistance = document.getElementById("stationDistance");
+    const stationLocation =
+    document.getElementById("stationLocation");
 
-const gasolineStatus = document.getElementById("gasolineStatus");
-const dieselStatus = document.getElementById("dieselStatus");
-const keroseneStatus = document.getElementById("keroseneStatus");
-const evStatus = document.getElementById("evStatus");
+    const stationDistance =
+    document.getElementById("stationDistance");
 
-const gasolinePrice = document.getElementById("gasolinePrice");
-const dieselPrice = document.getElementById("dieselPrice");
+    const gasolineStatus =
+    document.getElementById("gasolineStatus");
 
-const lastUpdated = document.getElementById("lastUpdated");
+    const dieselStatus =
+    document.getElementById("dieselStatus");
 
-markers.forEach(marker => {
+    const keroseneStatus =
+    document.getElementById("keroseneStatus");
 
-    marker.addEventListener("click", () => {
-       markers.forEach(m =>
-      m.classList.remove("active")
-     );
+    const evStatus =
+    document.getElementById("evStatus");
 
-marker.classList.add("active");
+    const gasolinePrice =
+    document.getElementById("gasolinePrice");
 
-        const stationId = Number(marker.dataset.id);
+    const dieselPrice =
+    document.getElementById("dieselPrice");
 
-        const station = stations.find(
-            item => item.id === stationId
-        );
+    const lastUpdated =
+    document.getElementById("lastUpdated");
 
-        if (!station) return;
+    /* =========================
+       MOBILE ELEMENTS
+    ========================= */
 
-        stationName.textContent = station.name;
+    const mobileSheet =
+    document.getElementById("mobileSheet");
 
-        stationLocation.textContent = station.location;
+    const mobileStationName =
+    document.getElementById("mobileStationName");
 
-        stationDistance.textContent = station.distance;
+    const mobileLocation =
+    document.getElementById("mobileLocation");
 
-        gasolineStatus.textContent = station.gasoline;
+    const mobileLocationText =
+    document.getElementById("mobileLocationText");
 
-        dieselStatus.textContent = station.diesel;
+    const mobileDistance =
+    document.getElementById("mobileDistance");
 
-        keroseneStatus.textContent = station.kerosene;
+    const mobileGasoline =
+    document.getElementById("mobileGasoline");
 
-        evStatus.textContent = station.ev;
+    const mobileDiesel =
+    document.getElementById("mobileDiesel");
+
+    const mobileKerosene =
+    document.getElementById("mobileKerosene");
+
+    const mobileEV =
+    document.getElementById("mobileEV");
+
+    const mobileGasPrice =
+    document.getElementById("mobileGasPrice");
+
+    const mobileDieselPrice =
+    document.getElementById("mobileDieselPrice");
+
+    const mobileUpdated =
+    document.getElementById("mobileUpdated");
+
+    const mobileAvailabilityBadge =
+    document.getElementById(
+        "mobileAvailabilityBadge"
+    );
+
+    /* =========================
+       ACTION BUTTONS
+    ========================= */
+
+    const callBtn =
+    document.getElementById("callBtn");
+
+    const mobileCallBtn =
+    document.getElementById("mobileCallBtn");
+
+    /* =========================
+       CURRENT STATION
+    ========================= */
+
+    let currentStation =
+    stations[0];
+
+    /* =========================
+       UPDATE UI
+    ========================= */
+
+    function updateStationUI(station){
+
+        currentStation = station;
+
+        /* Desktop */
+
+        stationName.textContent =
+        station.name;
+
+        stationLocation.textContent =
+        station.location;
+
+        stationDistance.textContent =
+        station.distance;
+
+        gasolineStatus.textContent =
+        station.gasoline;
+
+        dieselStatus.textContent =
+        station.diesel;
+
+        keroseneStatus.textContent =
+        station.kerosene;
+
+        evStatus.textContent =
+        station.ev;
 
         gasolinePrice.textContent =
-            station.gasolinePrice;
+        station.gasolinePrice;
 
         dieselPrice.textContent =
-            station.dieselPrice;
+        station.dieselPrice;
 
         lastUpdated.textContent =
-            "Last Updated: " + station.updated;
-mobileStationName.textContent =
-station.name;
+        "Last Updated: " +
+        station.updated;
 
-mobileStationStatus.textContent =
-`Gasoline: ${station.gasoline} • Diesel: ${station.diesel}`;
+        /* Mobile */
 
-    });
+        mobileStationName.textContent =
+        station.name;
 
-});
-const searchInput =
-document.getElementById(
-"stationSearch"
-);
+        mobileLocation.textContent =
+        station.location;
 
-searchInput.addEventListener(
-"input",
-function(){
+        mobileLocationText.textContent =
+        station.location;
 
+        mobileDistance.textContent =
+        station.distance;
 
-    const query =
-    this.value.toLowerCase();
+        mobileGasoline.textContent =
+        station.gasoline;
 
-    markers.forEach(marker=>{
+        mobileDiesel.textContent =
+        station.diesel;
 
-        const stationId =
-        Number(marker.dataset.id);
+        mobileKerosene.textContent =
+        station.kerosene;
 
-        const station =
-        stations.find(
-            s => s.id === stationId
+        mobileEV.textContent =
+        station.ev;
+
+        mobileGasPrice.textContent =
+        station.gasolinePrice;
+
+        mobileDieselPrice.textContent =
+        station.dieselPrice;
+
+        mobileUpdated.textContent =
+        "Last Updated: " +
+        station.updated;
+
+        /* Availability Badge */
+
+        if(
+            station.gasoline ===
+            "Available"
+        ){
+
+            mobileAvailabilityBadge.textContent =
+            "⛽ Available";
+
+        }
+
+        else if(
+            station.gasoline ===
+            "Low Stock"
+        ){
+
+            mobileAvailabilityBadge.textContent =
+            "⚠️ Low Stock";
+
+        }
+
+        else{
+
+            mobileAvailabilityBadge.textContent =
+            "❌ Unavailable";
+
+        }
+
+    }
+
+    /* =========================
+       MARKER CLICK
+    ========================= */
+
+    markers.forEach(marker => {
+
+        marker.addEventListener(
+            "click",
+            () => {
+
+                markers.forEach(m =>
+                    m.classList.remove(
+                        "active"
+                    )
+                );
+
+                marker.classList.add(
+                    "active"
+                );
+
+                const stationId =
+                Number(
+                    marker.dataset.id
+                );
+
+                const station =
+                stations.find(
+                    s =>
+                    s.id === stationId
+                );
+
+                if(!station) return;
+
+                updateStationUI(
+                    station
+                );
+
+                /* Auto open mobile */
+
+                if(
+                    window.innerWidth <= 992
+                ){
+
+                    mobileSheet.classList.add(
+                        "expanded"
+                    );
+
+                }
+
+            }
         );
 
-        marker.style.display =
-            station.name
-            .toLowerCase()
-            .includes(query)
-            ? "block"
-            : "none";
-
     });
 
-}
+    /* =========================
+       SEARCH
+    ========================= */
 
+    const searchInput =
+    document.getElementById(
+        "stationSearch"
+    );
 
-);
+    searchInput.addEventListener(
+        "input",
+        function(){
 
+            const query =
+            this.value.toLowerCase();
+
+            markers.forEach(
+                marker => {
+
+                    const stationId =
+                    Number(
+                        marker.dataset.id
+                    );
+
+                    const station =
+                    stations.find(
+                        s =>
+                        s.id === stationId
+                    );
+
+                    marker.style.display =
+                    station.name
+                    .toLowerCase()
+                    .includes(query)
+                    ? "flex"
+                    : "none";
+
+                }
+            );
+
+        }
+    );
+
+    /* =========================
+       MOBILE DRAG
+    ========================= */
+
+    const handleArea =
+    document.querySelector(
+        ".sheet-handle-area"
+    );
+
+    let startY = 0;
+
+    handleArea.addEventListener(
+        "touchstart",
+        e => {
+
+            startY =
+            e.touches[0].clientY;
+
+        }
+    );
+
+    handleArea.addEventListener(
+        "touchend",
+        e => {
+
+            const endY =
+            e.changedTouches[0].clientY;
+
+            const diff =
+            startY - endY;
+
+            if(diff > 40){
+
+                mobileSheet.classList.add(
+                    "expanded"
+                );
+
+            }
+
+            if(diff < -40){
+
+                mobileSheet.classList.remove(
+                    "expanded"
+                );
+
+            }
+
+        }
+    );
+
+    /* =========================
+       CALL BUTTONS
+    ========================= */
+
+    function callStation(){
+
+        window.location.href =
+        `tel:${currentStation.phone}`;
+
+    }
+
+    if(callBtn){
+
+        callBtn.addEventListener(
+            "click",
+            callStation
+        );
+
+    }
+
+    if(mobileCallBtn){
+
+        mobileCallBtn.addEventListener(
+            "click",
+            callStation
+        );
+
+    }
+
+    /* =========================
+       INITIAL STATION
+    ========================= */
+
+    updateStationUI(
+        stations[0]
+    );
+
+    if(markers[0]){
+
+        markers[0].classList.add(
+            "active"
+        );
+
+    }
 
 });
